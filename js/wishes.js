@@ -7,7 +7,7 @@ const PEOPLE = [
     id: "p1",
     name: "Rathnavva",
     relation: "Mumma ~ True Love",
-    avatar: "../assets/wishes/mumma4.png",
+    avatar: "../assets/mumma4.png",
     images: [MEDIA_BASE + "mumma_photo.jpeg"],        
     audio: [MEDIA_BASE + "mumma_note1a.ogg",
             MEDIA_BASE + "mumma_note1.ogg"
@@ -361,4 +361,5 @@ function createConfettiBurst(container, count = 20) {
 // init
 window.addEventListener('load', () => {
   buildGrid();
+
 });
