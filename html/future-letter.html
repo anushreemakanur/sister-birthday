@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Letter to Future — Envelope</title>
+  <link rel="stylesheet" href="../css/future-letter.css" />
+</head>
+<body>
+  <main class="env-root">
+    <header class="env-head">
+      
+      <h1>Write to your future self</h1>
+      <p class="env-sub">Click the envelope to open your letter.</p>
+    </header>
+
+    <section class="env-area">
+      <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open envelope">
+        <div class="env-top"></div>
+
+        <div class="env-body">
+          <div class="env-slot">
+            <div class="seal" id="seal">SEAL</div>
+          </div>
+        </div>
+        
+        <div class="env-bottom"></div>
+        
+        <!-- letter preview (used during animation) -->
+        <div class="letter-preview" id="letterPreview">
+          <div class="lp-heading" id="lpHeading">To Future Me</div>
+          <div class="lp-lines">
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="stateNote" class="state-note" aria-live="polite"></div>
+      <div class="controls">
+        <button id="openBtn" class="btn">Open Letter</button>
+        <button id="reopenBtn" class="btn alt hidden">Reopen Letter</button>
+      </div>
+    </section>
+    <body>
+  <button class="menu-floating-btn" onclick="window.location.href='page2.html'">
+    <svg viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
+  </main>
+
+  <script src="../js/future-letter.js"></script>
+</body>
+</html>

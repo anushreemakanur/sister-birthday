@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Quiz — Your Future Q&A</title>
+  <link rel="stylesheet" href="../css/quiz.css"/>
+</head>
+<body>
+  <button class="menu-floating-btn" onclick="window.location.href='page2.html'">
+    <svg viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
+  <main class="quiz-root">
+    <header class="quiz-head">
+      <h1>Tell us about you</h1>
+      <p class="subtitle">Write from the heart — everything here will be saved and shown on the final Q&A sheet.</p>
+    </header>
+
+    <section id="quizArea" class="quiz-area">
+      <!-- JS will inject all question cards here -->
+    </section>
+
+    <footer class="quiz-footer">
+      <div class="footer-inner">
+        <div class="note">All answers auto-save. You can come back anytime.</div>
+        <div class="footer-actions">
+          <button id="resetBtn" class="btn alt">Reset Answers</button>
+          <button id="finishBtn" class="btn">Finish & View Summary</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="summaryView" class="summary-view hidden">
+    <div class="summary-card">
+      <h2>Your Answers — Summary</h2>
+      <p class="summary-sub">This contains everything you answered. Print to PDF to save a copy.</p>
+
+      <div id="summaryContent" class="summary-content"></div>
+
+      <div class="summary-actions">
+        <button id="backEdit" class="btn alt">Back to Edit</button>
+        <button id="exportJSON" class="btn">Export JSON</button>
+        <button id="printBtn" class="btn">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIXED JS PATH BELOW -->
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

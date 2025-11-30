@@ -1,0 +1,123 @@
+/* Wishes page — GRID + Full-page Letter (Photo top, letter below) */
+:root{
+  --bg1:#fff6fb;
+  --bg2:#ffe9f2;
+  --muted:#5a2a5a;
+  --accent:#ff80bf;
+  --card-shadow: 0 22px 56px rgba(117,40,117,0.10);
+  --profile-size:150px;
+  --profile-gap:22px;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;
+  background: linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  padding:28px;
+}
+
+/* Root */
+.wishes-root{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.wishes-header{display:flex;flex-direction:column;align-items:center;gap:8px}
+.back-btn{align-self:flex-start;background:rgba(255,255,255,0.95);border:none;padding:8px 12px;border-radius:12px;box-shadow:0 10px 30px rgba(255,128,191,0.06);cursor:pointer;font-weight:700}
+.wishes-header h1{font-size:1.9rem;margin:0;color:var(--muted)}
+.subtitle{color:#6b3a6b;opacity:0.95}
+
+/* PROFILES GRID - 3 rows layout (4 / 4 / 4) */
+.profiles-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--profile-gap);
+  align-items:start;
+  margin-top:8px;
+}
+
+/* force last row to have 3 columns centered */
+.profiles-grid .spacer { visibility:hidden; } /* used to balance last row if needed */
+
+.profile-card{
+  background: linear-gradient(180deg,#fff,#fff8fb);
+  border-radius:16px;
+  padding:14px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  box-shadow:var(--card-shadow);
+  transition:transform .18s ease, box-shadow .18s;
+  cursor:pointer;user-select:none;border:1px solid rgba(255,128,191,0.06);
+}
+.profile-card:focus{outline:3px solid rgba(255,128,191,0.08)}
+.profile-avatar{
+  width:var(--profile-size);height:var(--profile-size);border-radius:14px;overflow:hidden;
+  display:block;object-fit:cover;border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 28px rgba(117,40,117,0.06);
+}
+.profile-name{font-size:0.98rem;color:#4b004b;margin-top:4px;font-weight:600}
+.profile-relation{font-size:0.82rem;color:#7a4a7a;opacity:0.9}
+
+/* hover */
+.profile-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 34px 84px rgba(117,40,117,0.12)}
+
+/* responsive grid rules: on small screens 2 columns */
+@media (max-width:900px){
+  .profiles-grid{grid-template-columns:repeat(3,1fr)}
+  :root{--profile-size:128px}
+}
+@media (max-width:640px){
+  .profiles-grid{grid-template-columns:repeat(2,1fr)}
+  :root{--profile-size:110px}
+}
+
+/* FOOTER */
+.wishes-footer{color:#6b2a6b;opacity:0.9}
+
+/* ========== FULL PAGE LETTER VIEW ========== */
+.letter-view{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(10,8,12,0.28), rgba(10,8,12,0.18));
+  z-index:120;padding:28px;
+}
+.hidden{display:none}
+.letter-inner{
+  width:960px;max-width:96%;max-height:92vh;background:linear-gradient(180deg,#fffafc,#fff6fb);border-radius:16px;
+  box-shadow:0 48px 120px rgba(117,40,117,0.18);overflow:hidden;position:relative;display:flex;flex-direction:column;
+}
+
+/* close button */
+.close-letter{position:absolute;right:14px;top:14px;background:rgba(255,255,255,0.95);border:none;padding:8px 10px;border-radius:10px;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,0.06);font-weight:700}
+
+/* letter top (photo + meta) */
+.letter-top{display:flex;flex-direction:column;align-items:center;padding:18px 22px 8px 22px;gap:12px}
+.letter-photo{width:220px;height:220px;border-radius:12px;object-fit:cover;border:6px solid rgba(255,255,255,0.7);box-shadow:0 18px 46px rgba(117,40,117,0.10)}
+.letter-meta{display:flex;flex-direction:column;align-items:center;gap:4px}
+.letter-meta strong{font-size:1.1rem;color:#4b004b}
+.letter-meta .relation{font-size:0.9rem;color:#7a4a7a;opacity:0.9}
+
+/* letter body (scrollable) */
+.letter-body{
+  padding:18px 34px 22px 34px;overflow:auto;line-height:1.6;font-size:1.05rem;
+  font-family: "Caveat", cursive; color:#4b004b;
+  background: linear-gradient(180deg, rgba(255,249,251,0.6), rgba(255,249,251,0.6));
+  border-top: 1px dashed rgba(200,160,200,0.08);
+}
+
+/* actions */
+.letter-actions{display:flex;gap:12px;justify-content:flex-end;padding:12px 22px;border-top:1px solid rgba(0,0,0,0.03);background:transparent}
+.btn{background:linear-gradient(90deg,#e0b3ff,#ffb6d9);border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--muted)}
+.btn.alt{background:rgba(255,255,255,0.9);border:1px solid rgba(255,128,191,0.08)}
+
+/* confetti layer */
+.confetti-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.confetti-piece{position:absolute;width:8px;height:14px;opacity:0.95;transform-origin:center;animation:confettiFall linear infinite}
+@keyframes confettiFall{0%{transform:translateY(-30vh) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(360deg);opacity:0.95}}
+
+/* small responsiveness for letter view */
+@media (max-width:920px){
+  .letter-inner{width:760px}
+  .letter-photo{width:180px;height:180px}
+}
+@media (max-width:640px){
+  .letter-inner{width:94%}
+  .letter-photo{width:160px;height:160px}
+  .letter-body{padding:14px}
+}

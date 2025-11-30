@@ -1,0 +1,259 @@
+:root{
+  --bg1:#ffe6f2;
+  --muted:#5a2a5a;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(180deg,var(--bg1),#ffd4e8);
+  color:var(--muted);
+  padding:28px;
+}
+
+/* FLOATING BACK BUTTON (top-right) */
+.menu-floating-btn{
+  position:fixed;
+  top:22px;
+  right:22px;
+  background:#ffb6d9;
+  border:none;
+  padding:12px;
+  border-radius:50%;
+  cursor:pointer;
+  width:46px;
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.12);
+  z-index:999;
+}
+
+.menu-floating-btn svg{
+  stroke:#4b004b;
+  stroke-width:2.4;
+  fill:none;
+}
+
+/* MAIN LAYOUT */
+.write-root{
+  max-width:900px;
+  margin:60px auto 0 auto;
+}
+
+/* Header */
+.write-head{
+  text-align:center;
+  margin-bottom:16px;
+}
+
+.write-head h1{
+  font-size:1.6rem;
+  margin-bottom:6px;
+}
+
+.sub{
+  opacity:0.8;
+}
+
+/* Sheet */
+.sheet-area{
+  display:flex;
+  justify-content:center;
+}
+
+.sheet-wrap{
+  width:760px;
+  background:#fffafd;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Top row */
+.sheet-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.heading{
+  flex-grow:1;
+  padding:10px;
+  border-radius:10px;
+  border:1px dashed rgba(0,0,0,0.12);
+  font-size:1.1rem;
+}
+
+.last-saved{
+  font-size:0.9rem;
+  opacity:0.8;
+}
+
+/* TRASH BUTTON */
+.icon-btn{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  border-radius:8px;
+}
+
+.icon-btn:hover{
+  background:rgba(0,0,0,0.05);
+}
+
+.icon-btn svg{
+  stroke:#5a2a5a;
+  fill:none;
+}
+
+/* SAVE BUTTON */
+.btn{
+  background:linear-gradient(90deg,#e0b3ff,#ffb6d9);
+  border:none;
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--muted);
+}
+
+.btn.alt{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.12);
+}
+
+.btn.danger{
+  background:#ff6b6b;
+  color:white;
+}
+
+/* Lined Paper */
+.sheet-body{
+  margin-top:16px;
+  padding:12px;
+  border-radius:10px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,245,250,0.8) 0px,
+      rgba(255,245,250,0.8) 36px,
+      rgba(245,240,245,0.9) 36px,
+      rgba(245,240,245,0.9) 38px
+    );
+  min-height:420px;
+}
+
+#letterArea{
+  width:100%;
+  min-height:360px;
+  border:none;
+  background:transparent;
+  resize:none;
+  padding:18px;
+  outline:none;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+  
+/* Delete Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal.hidden{display:none;}
+
+.modal-card{
+  background:white;
+  padding:22px;
+  border-radius:12px;
+  text-align:center;
+  width:360px;
+  box-shadow:0 24px 70px rgba(0,0,0,0.2);
+}
+
+.modal-actions{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+/* SAVE BUTTON - subtle active press */
+.btn{
+  background:linear-gradient(90deg,#e0b3ff,#ffb6d9);
+  border:none;
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  color:var(--muted);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{ transform:scale(.98); }
+
+/* SEAL STAMP (animation element) */
+.seal-stamp {
+  position:fixed;
+  left:50%;
+  top:46%;
+  transform:translate(-50%,-50%) scale(.6);
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#ff7db0,#ff5f95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:800;
+  z-index:9999;
+  box-shadow:0 18px 60px rgba(117,40,117,0.18);
+  opacity:0;
+  pointer-events:none;
+}
+
+/* small stamp graphic inside */
+.seal-stamp .txt{ font-size:20px; letter-spacing:1px; }
+
+/* stamp animation keyframes */
+@keyframes stampIn {
+  0% { transform: translate(-50%,-50%) scale(.6) rotate(-6deg); opacity:0 }
+  45% { transform: translate(-50%,-50%) scale(1.06) rotate(3deg); opacity:1 }
+  70% { transform: translate(-50%,-50%) scale(.95) rotate(-1deg); opacity:1 }
+  100% { transform: translate(-50%,-50%) scale(1) rotate(0deg); opacity:1 }
+}
+@keyframes stampOut {
+  0% { opacity:1; transform: translate(-50%,-50%) scale(1) }
+  100% { opacity:0; transform: translate(-50%,-50%) scale(1.08) }
+}
+
+/* visible state triggers */
+.seal-stamp.show {
+  animation: stampIn 460ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+.seal-stamp.hide {
+  animation: stampOut 360ms ease forwards;
+}
+
+/* small "sealed" label in the sheet-top when saved (optional) */
+.sealed-label {
+  display:inline-block;
+  background:#ffecf3;
+  color:#7a2156;
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:700;
+  margin-left:6px;
+  font-size:0.9rem;
+  border:1px solid rgba(255,128,191,0.08);
+}

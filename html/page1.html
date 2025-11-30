@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Abhishree 🎂</title>
+
+  <!-- FIXED PATH -->
+  <link rel="stylesheet" href="../css/page1.css" />
+</head>
+<body>
+
+  <!-- FIXED PATHS -->
+  <img id="confetti-bg" class="intro-img" src="../assets/confetti.png" />
+  <img id="left-balloons" class="intro-img" src="../assets/left_balloon.png" />
+
+  <audio id="sfx-confetti" src="../sounds/confetti.mp3"></audio>
+  <audio id="sfx-balloon" src="../sounds/balloon.mp3"></audio>
+  <audio id="sfx-chime" src="../sounds/chime.mp3"></audio>
+
+  <div class="container">
+
+    <!-- CLOCK -->
+    <section id="clock-section">
+      <div id="flipClock" class="flip-clock">
+        <div class="clock-tile" id="hourTile"><span class="top">00</span><span class="bottom">00</span></div>
+        <div class="colon">:</div>
+        <div class="clock-tile" id="minuteTile"><span class="top">00</span><span class="bottom">00</span></div>
+        <div class="colon">:</div>
+        <div class="clock-tile" id="secondTile"><span class="top">00</span><span class="bottom">00</span></div>
+      </div>
+      <p class="caption">Time keeps ticking, but today's your moment, Abhishree.</p>
+    </section>
+
+    <!-- AGE -->
+    <section id="age-counter">
+      <p id="age-display">You are 0 days, 0 hours, 0 minutes, 0 seconds old.</p>
+      <p class="sub">Every second tells your story.</p>
+    </section>
+
+    <!-- MOOD -->
+    <section id="mood-zone">
+      <div id="mood-trigger">How are you feeling today?</div>
+      <div id="mood-area">
+        <div id="mood-emojis"></div>
+        <p id="mood-quote"></p>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login-box">
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Your name" required />
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="*******" required />
+          <span id="togglePassword" class="eye-icon">👁️</span>
+        </div>
+
+        <p class="hint">Hint: Do you love your sister?</p>
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- FIXED SCRIPT PATH -->
+  <script src="../js/page1.js"></script>
+</body>
+</html>

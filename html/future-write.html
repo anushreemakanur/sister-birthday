@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Future Letter</title>
+  <link rel="stylesheet" href="../css/future-write.css" />
+</head>
+
+<body>
+
+  <!-- FLOATING BACK BUTTON (top right corner) -->
+  <button class="menu-floating-btn" id="backBtn">
+    <svg viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+
+  <main class="write-root">
+
+    <!-- Header -->
+    <header class="write-head">
+      <h1>Your Future Letter</h1>
+      <p class="sub">Write a message to your future self</p>
+    </header>
+
+    <!-- Writing Area -->
+    <section class="sheet-area">
+      <div class="sheet-wrap">
+
+        <div class="sheet-top">
+
+          <input id="letterHeading" class="heading"
+                 placeholder="Heading" />
+
+          <span id="lastSaved" class="last-saved">Not saved yet</span>
+
+          <!-- TRASH BEFORE SAVE -->
+          <button id="deleteBtn" class="icon-btn" title="Delete">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 6v12" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 6v12" stroke="currentColor" stroke-width="2"/>
+              <path d="M5 6l1 14h12l1-14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9 6V4h6v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <button id="saveBtn" class="btn">Seal & Save</button>
+        </div>
+
+        <div class="sheet-body">
+          <textarea id="letterArea"
+            placeholder="Start writing your letter here..."></textarea>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Delete Modal -->
+  <div id="deleteModal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Delete letter?</h3>
+      <p>This will permanently remove your saved future letter.</p>
+      <div class="modal-actions">
+        <button id="cancelDelete" class="btn alt">Cancel</button>
+        <button id="confirmDelete" class="btn danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/future-write.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+:root{
+  --bg:#fff5f8;
+  --paper:#fffafc;
+  --muted:#51304a;
+  --accent1:#ffd6ea;
+  --accent2:#e9d9ff;
+  --card-shadow: 0 20px 60px rgba(81,48,74,0.08);
+  --radius:14px;
+  --accent-stroke:#ffdfea;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, #fff1f6 0%, #fffafc 50%);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  padding:28px;
+}
+
+/* root */
+.quiz-root{
+  max-width:920px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* header */
+.quiz-head h1{font-size:1.8rem;color:#45213a;margin-bottom:6px}
+.subtitle{color:#7a4a7a;margin-bottom:6px}
+
+/* scrollable area */
+.quiz-area{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  max-height:68vh;
+  overflow:auto;
+  padding:10px;
+  scroll-behavior:smooth;
+}
+
+/* pastel paper card (notebook style) */
+.q-card{
+  background: linear-gradient(180deg, var(--paper), #fff9fb);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--accent-stroke);
+  position: relative;
+  display:block;
+}
+
+/* paper header look */
+.q-card:before{
+  content:"";
+  position:absolute;
+  left:22px;
+  top:-12px;
+  width:60px;
+  height:12px;
+  background: linear-gradient(90deg, rgba(255,214,234,0.9), rgba(233,217,255,0.9));
+  border-radius:8px;
+  opacity:0.9;
+}
+
+/* title + instruction */
+.q-title{font-weight:700;margin-bottom:10px;font-size:1.05rem}
+.q-instruction{color:#7a4a7a;margin-bottom:12px}
+
+/* options */
+.options{display:flex;flex-direction:column;gap:10px}
+.option{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#fff,#fffafc);
+  border:1px solid rgba(0,0,0,0.03);
+}
+.option:hover{box-shadow:0 8px 30px rgba(81,48,74,0.03);transform:translateY(-3px);transition:all .14s ease}
+.option input[type="radio"], .option input[type="checkbox"]{margin-top:5px}
+.option-label{flex:1;line-height:1.45}
+
+/* Other inline input (hidden by default) */
+.other-input{
+  margin-top:8px;
+  display:none;
+}
+.other-input input{
+  width:100%;
+  padding:10px;border-radius:10px;border:1px dashed rgba(81,48,74,0.08);
+  background:#fff;
+}
+
+/* text inputs */
+.q-text, .q-textarea{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px dashed rgba(81,48,74,0.06);
+  background: linear-gradient(180deg,#fff,#fffafc);
+  font-size:1rem;
+  color:var(--muted);
+}
+.q-textarea{min-height:120px;resize:vertical}
+
+/* footer */
+.quiz-footer{margin-top:8px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.note{color:#7a4a7a}
+.footer-actions{display:flex;gap:10px}
+
+/* buttons */
+.btn{
+  background:linear-gradient(90deg,#e9d9ff,#ffd6ea);
+  border:none;padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--muted);
+  box-shadow:0 8px 24px rgba(81,48,74,0.06);
+}
+.btn.alt{background:#fff;border:1px solid rgba(0,0,0,0.06)}
+
+/* summary view (modal) */
+.summary-view{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.14);z-index:9999;
+}
+.summary-view.hidden{display:none}
+.summary-card{
+  width:820px;max-width:96%;background:#fff;border-radius:12px;padding:20px;box-shadow:0 40px 120px rgba(81,48,74,0.12);
+}
+.summary-sub{color:#7a4a7a;margin-bottom:12px}
+.summary-content{background:#fff8fb;padding:14px;border-radius:10px;max-height:60vh;overflow:auto}
+.summary-item{margin-bottom:12px}
+.summary-q{font-weight:700;margin-bottom:6px}
+.summary-a{padding-left:10px;border-left:3px solid #f6d9ef;color:var(--muted)}
+
+/* responsive */
+@media (max-width:760px){
+  .q-card{padding:14px}
+  .quiz-area{max-height:62vh}
+  .summary-card{width:92%}
+}
+
+.menu-floating-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f8c9e0;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  z-index: 2000;
+}
+
+.menu-floating-btn:hover {
+  transform: scale(1.07);
+  background: #f5b6d7;
+}
+
+.menu-floating-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #6e2a52;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

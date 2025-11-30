@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory Lane — Abhishree</title>
+  <link rel="stylesheet" href="../css/memory-lane.css" />
+</head>
+<body class="memory-body">
+
+  <main class="memory-root">
+    <header class="memory-header">
+      <button class="back-btn" onclick="location.href='page2.html'">&larr; Back</button>
+      <h1>Memory Lane</h1>
+      <p class="subtitle">Hanging polaroids from left to right — click to view fullscreen</p>
+    </header>
+
+    <section class="garland-wrap" id="garlandWrap" aria-label="Memory Lane">
+      <!-- rows injected by JS -->
+    </section>
+
+  </main>
+
+  <!-- Lightbox / Fullscreen gallery -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
+    <button id="lbPrev" class="lb-nav lb-prev" aria-label="Previous">&lt;</button>
+    <button id="lbNext" class="lb-nav lb-next" aria-label="Next">&gt;</button>
+
+    <div class="lb-content">
+      <img id="lbImage" src="" alt="" />
+      <div id="lbCaption" class="lb-caption"></div>
+    </div>
+
+    <div class="lb-bottom">
+      <button id="lbDownload" class="btn">Download</button>
+      <div class="lb-counter" id="lbCounter"></div>
+    </div>
+  </div>
+
+  <script src="../js/memory-lane.js"></script>
+</body>
+</html>
