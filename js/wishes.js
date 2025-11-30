@@ -15,7 +15,6 @@ const PEOPLE = [
     extraVideos: [
       MEDIA_BASE + "mfriend1.mp4",
       MEDIA_BASE + "mfriend2.mp4",
-      MEDIA_BASE + "mfriend3.mp4",
       MEDIA_BASE + "mfriend4.mp4",
       MEDIA_BASE + "mfriend5.mp4"
     ],
@@ -363,3 +362,4 @@ window.addEventListener('load', () => {
   buildGrid();
 
 });
+
