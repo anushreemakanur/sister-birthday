@@ -35,11 +35,11 @@ const IMAGES = [
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.33 AM.jpeg", caption: "Same Cousin Wedding 🙂"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.59.56 AM.jpeg", caption: "Re - creation 💁‍♀️"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.32 AM.jpeg", caption: "Ummaaa 💋"},
-  {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.32 AM (2).jpeg", caption: "Akka Grad 👩‍🎓"}
-  {src: MEDIA_BASE + "IMG-20251129-WA0015_3.jpg", caption: "19th B'day 🎂"}
-  {src: MEDIA_BASE + "IMG_9340_4.jpg", caption: "Ramen Surprise 🍜"}
-  {src: MEDIA_BASE + "IMG_9474_5.jpg", caption: "Kundapura Meenu 🐟"} 
-  {src: MEDIA_BASE + "IMG-20251202-WA0000_6.jpg", caption: "Freshers 🏫"}
+  {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.32 AM (2).jpeg", caption: "Akka Grad 👩‍🎓"},
+  {src: MEDIA_BASE + "IMG-20251129-WA0015_3.jpg", caption: "19th B'day 🎂"},
+  {src: MEDIA_BASE + "IMG_9340_4.jpg", caption: "Ramen Surprise 🍜"},
+  {src: MEDIA_BASE + "IMG_9474_5.jpg", caption: "Kundapura Meenu 🐟"}, 
+  {src: MEDIA_BASE + "IMG-20251202-WA0000_6.jpg", caption: "Freshers 🏫"},
   {src: MEDIA_BASE + "IMG-20251202-WA0003_7.jpg", caption: "BT Boss 🧪"}
 ];
 
@@ -242,5 +242,6 @@ lightbox.addEventListener('touchend', handleTouchEnd, {passive:true});
 window.addEventListener('load', () => {
   buildGarland();
 });
+
 
 
