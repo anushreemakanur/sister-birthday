@@ -44,7 +44,7 @@ const IMAGES = [
 ];
 
 /* layout settings */
-const ROW_SIZE = 6; // how many polaroids per horizontal row (adjust to taste)
+const ROW_SIZE = 7; // how many polaroids per horizontal row (adjust to taste)
 
 /* DOM */
 const garlandWrap = document.getElementById('garlandWrap');
@@ -242,4 +242,5 @@ lightbox.addEventListener('touchend', handleTouchEnd, {passive:true});
 window.addEventListener('load', () => {
   buildGarland();
 });
+
 
