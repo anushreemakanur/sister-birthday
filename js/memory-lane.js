@@ -21,7 +21,7 @@ const IMAGES = [
   {src: MEDIA_BASE + "IMG-20241128-WA0048.jpg", caption: "Cousin Madhve 🫣"},
   {src: MEDIA_BASE + "Snapchat-844859375.jpg", caption: "Holi in NGD 🫟"},
   {src: MEDIA_BASE + "IMG20240426172833_0.jpg", caption: "Ooty Sun-kiss 💋"},
-  {src: MEDIA_BASE + "WhatsApp10.08.11PM_1.jpg", caption: "Bili Jirle 𖠋♡𖠋"},
+  {src: MEDIA_BASE + "WhatsApp10.08.11PM_1.jpeg", caption: "Bili Jirle 𖠋♡𖠋"},
   {src: MEDIA_BASE + "Snapchat-1106840390.jpg", caption: "Being Cuties 🐳"},
   {src: MEDIA_BASE + "abhi-ethnic.jpeg", caption: "Came to Bnglr | Ethnic day @ACharya 🧑‍🏫"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.59.57 AM (1).jpeg", caption: "1st year friends 👍🏻"},
@@ -30,6 +30,7 @@ const IMAGES = [
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.59.59 AM.jpeg", caption: "Awww!! 🥹"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.59.58 AM.jpeg", caption: "Arguments 🙈"},
   {src: MEDIA_BASE + "IMG-20241130-WA0055.jpg", caption: "Daily Sushi | Last year Bday 🎈"},
+  {src: MEDIA_BASE + "WhatsApp10.07.34PM_2.jpeg", caption: "Seniors | @Acharya 🧑‍🏫"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.59.57 AM.jpeg", caption: "Meeting her was IMP 🪬"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.33 AM (1).jpeg", caption: "Bride to Be | Cousin 👰‍♀️"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.33 AM.jpeg", caption: "Same Cousin Wedding 🙂"},
@@ -37,10 +38,10 @@ const IMAGES = [
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.32 AM.jpeg", caption: "Ummaaa 💋"},
   {src: MEDIA_BASE + "WhatsApp Image 2025-11-29 at 2.54.32 AM (2).jpeg", caption: "Akka Grad 👩‍🎓"},
   {src: MEDIA_BASE + "IMG-20251129-WA0015_3.jpg", caption: "19th B'day 🎂"},
-  {src: MEDIA_BASE + "IMG_9340_4.jpg", caption: "Ramen Surprise 🍜"},
-  {src: MEDIA_BASE + "IMG_9474_5.jpg", caption: "Kundapura Meenu 🐟"}, 
+  {src: MEDIA_BASE + "IMG_9340_4.JPG", caption: "Ramen Surprise 🍜"},
+  {src: MEDIA_BASE + "IMG_9474_5.JPG", caption: "Kundapura Meenu 🐟"}, 
   {src: MEDIA_BASE + "IMG-20251202-WA0000_6.jpg", caption: "Freshers 🏫"},
-  {src: MEDIA_BASE + "IMG-20251202-WA0003_7.jpg", caption: "BT Boss 🧪"},
+  {src: MEDIA_BASE + "IMG-20251202-WA0003_7.jpg", caption: "BT Boss 🧪"}
 ];
 
 /* layout settings */
@@ -242,6 +243,7 @@ lightbox.addEventListener('touchend', handleTouchEnd, {passive:true});
 window.addEventListener('load', () => {
   buildGarland();
 });
+
 
 
 
