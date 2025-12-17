@@ -40,7 +40,7 @@ const IMAGES = [
   {src: MEDIA_BASE + "IMG_9340_4.jpg", caption: "Ramen Surprise 🍜"},
   {src: MEDIA_BASE + "IMG_9474_5.jpg", caption: "Kundapura Meenu 🐟"}, 
   {src: MEDIA_BASE + "IMG-20251202-WA0000_6.jpg", caption: "Freshers 🏫"},
-  {src: MEDIA_BASE + "IMG-20251202-WA0003_7.jpg", caption: "BT Boss 🧪"}
+  {src: MEDIA_BASE + "IMG-20251202-WA0003_7.jpg", caption: "BT Boss 🧪"},
 ];
 
 /* layout settings */
@@ -242,6 +242,7 @@ lightbox.addEventListener('touchend', handleTouchEnd, {passive:true});
 window.addEventListener('load', () => {
   buildGarland();
 });
+
 
 
 
